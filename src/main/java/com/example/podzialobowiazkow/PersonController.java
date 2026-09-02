@@ -1,8 +1,7 @@
 package com.example.podzialobowiazkow;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -10,14 +9,18 @@ import java.util.List;
 @RequestMapping("/api/v1/person")
 public class PersonController {
     @GetMapping
-    public List<Person> getPerson(){
-        return List.of(
-                new Person(
-                        1,
-                        "Kazimiera",
-                        "Parent"
+//    public List<Person> getPerson(){
+//        return List.of(
+//                new Person(
+//                        1,
+//                        "Kazimiera",
+//                        "Parent"
+//                )
+//        );
+//    }
 
-                )
-        );
+    @PostMapping
+    public Person addPerson(@RequestBody Person person){
+        return person;
     }
 }

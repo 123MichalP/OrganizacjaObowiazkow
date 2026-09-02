@@ -1,17 +1,21 @@
 package com.example.podzialobowiazkow;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "person")
 public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String role;
 
 
-    public Person(Integer id, String name, String role) {
-        this.id = id;
-        this.name = name;
-        this.role = role;
+    public Person(){
     }
 
 
